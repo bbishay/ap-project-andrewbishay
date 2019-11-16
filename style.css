@@ -2,7 +2,13 @@
     margin:0;
 }
 .container-1{
-    background-color: darkgray;
+    background-color: rgb(250, 92, 83);
     font-family: 'Varela Round', sans-serif;
-    font-size:10vw;
+    font-size:3vw;
+    height:50vh;
+    color:white;
+}
+.container-2{
+    background-color: rgb(80, 80, 80);
+    height:50vh;
 }
