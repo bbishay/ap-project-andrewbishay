@@ -1,8 +1,57 @@
 *{
     margin:0;
 }
-.container-1{
-    background-color: darkgray;
-    font-family: 'Varela Round', sans-serif;
-    font-size:10vw;
+<<<<<<< HEAD
+
+.sudoku-board{
+    display:flex;
+    flex-direction:column;
 }
+
+.row{
+    display:flex;
+}
+
+.square-small{
+    border: solid 1px black;
+    height:5vw;
+    width:5vw;
+}
+
+.square-large{
+    border: solid 1px black;
+    width:15vw;
+}
+
+.left-bold{
+    border-left: solid 2px black;
+}
+
+.right-bold{
+    border-right: solid 2px black;
+}
+
+.top-bold{
+    border-top: solid 2px black;
+}
+
+.bottom-bold{
+    border-bottom: solid 2px black;
+}
+
+.column-large{
+    display: flex;
+}
+=======
+.container-1{
+    background-color: rgb(250, 92, 83);
+    font-family: 'Varela Round', sans-serif;
+    font-size:3vw;
+    height:50vh;
+    color:white;
+}
+.container-2{
+    background-color: rgb(80, 80, 80);
+    height:50vh;
+}
+>>>>>>> c6c445d7def21f2c53f11fbbf06a221ae0405e07
