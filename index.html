@@ -4,167 +4,192 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <div class="sudoku-board">
-        <div class="column-large">
-            <div class="square-large left-bold top-bold">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-            <div class="square-large top-bold">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-            <div class="square-large top-bold right-bold">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-        </div>
-        <div class="column-large">
-            <div class="square-large left-bold">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></ininput>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-            <div class="square-large">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-            <div class="square-large right-bold">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-        </div>
-        <div class="column-large">
-            <div class="square-large left-bold bottom-bold">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-            <div class="square-large bottom-bold">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-            <div class="square-large right-bold bottom-bold">
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-                <div class="row">
-                    <input class="square-small"></input>
-                    <input class="square-small"></input> 
-                    <input class="square-small"></input>    
-                </div>
-            </div>
-        </div> 
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Permanent+Marker&display=swap" rel="stylesheet">
+
+    <div class="title">
+        Sudoku
+        <div class="title-solver">Solver</div>
+        <img src="https://cdn131.picsart.com/286471567062211.png?r1024x1024" alt="">
     </div>
+
+    <div class="board-submit-container">
+        <div class="board">
+            <div class="column-large">
+                <div class="square-large left-bold top-bold">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+                <div class="square-large top-bold">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+                <div class="square-large top-bold right-bold">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+            </div>
+            <div class="column-large">
+                <div class="square-large left-bold">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></ininput>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+                <div class="square-large">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+                <div class="square-large right-bold">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+            </div>
+            <div class="column-large">
+                <div class="square-large left-bold bottom-bold">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+                <div class="square-large bottom-bold">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+                <div class="square-large right-bold bottom-bold">
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                    <div class="row">
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input> 
+                        <input maxlength="1" pattern="[1-9]*" onkeyup="checkInput(this)" class="square-small"></input>    
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="submit-container">
+            <div class="desc">
+                Type in some values and try it out
+            </div>
+            <div class="submit">
+                Submit Values
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    
+
     <script src="app.js"></script>
   </body>
 </html>

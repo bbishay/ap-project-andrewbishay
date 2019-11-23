@@ -2,9 +2,33 @@
     margin:0;
 }
 
-.sudoku-board{
+.title{
+    font-family: 'Permanent Marker', cursive;
+    font-size:6vw;
+    height:0;
+    width:0;
+    margin-left:2.5vw;
+    margin-top:5vw;
+}
+
+.title-solver{
+    margin-left:5vw;
+}
+
+.title img{
+    margin-left:-2vw;
+    margin-top:-10vw;
+    width:30vw;
+}
+
+.board-submit-container{
+    display:flex;
+    justify-content: space-around;
+}
+
+.board{
     margin-left:29.75vw;
-    margin-top:5vh;
+    margin-top:0;
 }
 
 .row{
@@ -17,7 +41,7 @@
     width:4.5vw;
     text-align: center;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 4vw;
+    font-size: 3.5vw;
 }
 
 .square-large{
@@ -44,3 +68,33 @@
 .column-large{
     display: flex;
 }
+
+.submit-container{
+    margin-top:15vw;
+}
+
+.desc{
+    font-size:5vw;
+    font-family: 'Caveat', cursive;
+    text-align:right;
+    width:25vw;
+    margin-right: 3vw;
+}
+
+.submit{
+    font-family: 'Permanent Marker', cursive;
+    font-size:2.5vw;
+    background-color:black;
+    padding:1vw;
+    color:white;
+    border-radius:2vw;
+    width:20vw;
+    text-align: center;
+    margin:0 auto;
+}
+
+.submit:hover{
+    color:lightgray;
+    cursor: pointer;
+}
+
