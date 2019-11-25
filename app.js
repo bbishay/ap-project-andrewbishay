@@ -30,7 +30,7 @@ document.querySelector('.submit').addEventListener('click', function(){
     
     
     for (i = 0; i < 7; i = i + 3){
-        let columnOne = [values[i], values[i + 27], values[i + 54]];
+        let columnOne = [...[values[i]], ...[values[i + 27]], ...[values[i + 54]]];
         let columnTwo = [values[i + 1], values[i + 28], values[i + 55]];
         let columnThree = [values[i + 2], values[i + 29], values[i + 56]];
         let columnFour = [values[i + 9], values[i + 36], values[i + 63]];
@@ -39,6 +39,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         let columnSeven = [values[i + 18], values[i + 45], values[i + 72]];
         let columnEight = [values[i + 19], values[i + 46], values[i + 73]];
         let columnNine = [values[i + 20], values[i + 47], values[i + 74]];
+        console.log(columnOne[0]);
     }
 
     for (i = 0; i < 9; i++){
