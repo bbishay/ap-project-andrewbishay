@@ -11,10 +11,19 @@ function checkInput(input){
 document.querySelector('.submit').addEventListener('click', function(){
     //console.log('test1');
     let values = [];
+    let arr = []
+
     for (i = 1; i < 82; i++){
         values.push(Number(document.querySelector(`.square-small${i}`).value));
     }
-    //console.log(values);
+    for (i = 0; i <= 8; i++) {
+        let row = [];
+        for (x = 0 + 9 * i; x <= 8 + 9 * i; x++) {
+            row.push(values[x])
+        }
+        arr.push(row)
+    }
+    values = [...arr]
     
     for (i = 0; i < 3; i++){
         let rowOne = [values[i], values[i + 9], values[i + 18]]; 
@@ -30,7 +39,7 @@ document.querySelector('.submit').addEventListener('click', function(){
     
     
     for (i = 0; i < 7; i = i + 3){
-        let columnOne = [...[values[i]], ...[values[i + 27]], ...[values[i + 54]]];
+        //let columnOne = [...[values[i]], ...[values[i + 27]], ...[values[i + 54]]];
         let columnTwo = [values[i + 1], values[i + 28], values[i + 55]];
         let columnThree = [values[i + 2], values[i + 29], values[i + 56]];
         let columnFour = [values[i + 9], values[i + 36], values[i + 63]];
@@ -39,8 +48,9 @@ document.querySelector('.submit').addEventListener('click', function(){
         let columnSeven = [values[i + 18], values[i + 45], values[i + 72]];
         let columnEight = [values[i + 19], values[i + 46], values[i + 73]];
         let columnNine = [values[i + 20], values[i + 47], values[i + 74]];
-        console.log(columnOne[0]);
     }
+    console.log(values);
+
 
     for (i = 0; i < 9; i++){
         let squareLargeOne = [values[i]];
