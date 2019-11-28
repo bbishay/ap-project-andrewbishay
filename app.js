@@ -7,10 +7,6 @@ function checkInput(input){
 //restricts typeable characters in input to only numerical values
 
 
-if(Number(document.querySelector(`.square-small1`).value) > 0){
-    document.querySelector(`.square-small1`).style.backgroundColor = 'red';
-}
-
 
 //obtain input values and create 2D array of the board
 document.querySelector('.submit').addEventListener('click', function(){
@@ -24,27 +20,35 @@ document.querySelector('.submit').addEventListener('click', function(){
     for (i = 0; i <= 8; i++) {
         let row = [];
         for (x = 9 * i; x <= 8 + 9 * i; x++) {
-            row.push(values[x])
+            row.push(values[x]);
         }
-        board.push(row)
+        board.push(row);
     }
 
-    let possibleValues = []
-    let userValue = board[0].find(function(x){
-        return x > 0;
-    })
+    let userValues = [];
+    let possibleValues = [];
+    let confirmedValues = [];
+
+    for (i = 0; i <= 8; i++){
+        if(board[0][i] > 0){
+            userValues.push(board[0][i]);
+        }
+    }
 
     for(i = 1; i <= 9; i++){
-        if (userValue !== i){
+        if (userValues[i -1] !== i){
             possibleValues.push(i);
         }
     }
-    
+    //have to figure out how to adjust this so that order doesn't matter
 
 
-    console.log(possibleValues);
-    
-    
+    if(possibleValues.length === 1){
+        confirmedValues = possibleValues;
+    }
+
+    console.log(possibleValues)
+    console.log(confirmedValues);
 });
 
 
