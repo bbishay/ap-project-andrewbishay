@@ -7,6 +7,11 @@ function checkInput(input){
 //restricts typeable characters in input to only numerical values
 
 
+if(Number(document.querySelector(`.square-small1`).value) > 0){
+    document.querySelector(`.square-small1`).style.backgroundColor = 'red';
+}
+
+
 //obtain input values and create 2D array of the board
 document.querySelector('.submit').addEventListener('click', function(){
     let values = [];
@@ -28,12 +33,15 @@ document.querySelector('.submit').addEventListener('click', function(){
     let userValue = board[0].find(function(x){
         return x > 0;
     })
+
     for(i = 1; i <= 9; i++){
         if (userValue !== i){
             possibleValues.push(i);
         }
     }
     
+
+
     console.log(possibleValues);
     
     

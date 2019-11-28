@@ -34,11 +34,11 @@ input[class*="square-small"]{
     width:4vw;
     text-align: center;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 3.5vw;
+    font-size: 3vw;
 }
 
-.zero-border{
-    border-top:0;
+input:focus{
+    outline:none;
 }
 
 #left-bold{
@@ -63,10 +63,6 @@ input[class*="square-small"]{
 
 #bottom-bold-midsquare{
     border-bottom: solid 1px black;
-}
-
-.column-large{
-
 }
 
 .submit-container{
