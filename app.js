@@ -26,7 +26,7 @@ document.querySelector('.submit').addEventListener('click', function(){
     }
 
     let userValues = [];
-    let possibleValues = [];
+    let possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let confirmedValues = [];
 
     for (i = 0; i <= 8; i++){
@@ -35,11 +35,25 @@ document.querySelector('.submit').addEventListener('click', function(){
         }
     }
 
-    for(i = 1; i <= 9; i++){
-        if (userValues[i -1] !== i){
-            possibleValues.push(i);
-        }
+    console.log(possibleValues.every(val => possibleValues.includes(val)));
+
+
+    if (possibleValues.includes(userValues)){
+        return possibleValues.filter(function(){
+            return possibleValues.includes(userValues);
+        })
     }
+    
+    console.log(possibleValues);
+    
+    /* for(i = 1; i <= 9; i++){
+        if (userValues[i -1] !== i){
+            possibleValues.forEach(x => {
+                possibleValues. possibleValues.findIndex(x)
+            });
+        }
+    } */
+    //console.log(userValues);
     //have to figure out how to adjust this so that order doesn't matter
 
 
@@ -47,8 +61,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         confirmedValues = possibleValues;
     }
 
-    console.log(possibleValues)
-    console.log(confirmedValues);
+    
 });
 
 
