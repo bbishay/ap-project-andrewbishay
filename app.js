@@ -34,17 +34,13 @@ document.querySelector('.submit').addEventListener('click', function(){
             userValues.push(board[0][i]);
         }
     }
-
-    console.log(possibleValues.every(val => possibleValues.includes(val)));
-
-
-    if (possibleValues.includes(userValues)){
-        return possibleValues.filter(function(){
-            return possibleValues.includes(userValues);
-        })
-    }
     
-    console.log(possibleValues);
+    
+    userValues.forEach((i, x) => {
+        possibleValues.splice(possibleValues[possibleValues.findIndex(i => i)], 1)
+    })
+    console.log(possibleValues)
+    //possibleValues.filter(val => userValues.includes(val));
     
     /* for(i = 1; i <= 9; i++){
         if (userValues[i -1] !== i){
