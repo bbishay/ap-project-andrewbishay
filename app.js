@@ -35,29 +35,17 @@ document.querySelector('.submit').addEventListener('click', function(){
         }
     }
     
+    userValues.forEach(i => {
+        possibleValues.splice(possibleValues.findIndex(x => x == i), 1);
+    });
     
-    userValues.forEach((i, x) => {
-        possibleValues.splice(possibleValues[possibleValues.findIndex(i => i)], 1)
-    })
-    console.log(possibleValues)
-    //possibleValues.filter(val => userValues.includes(val));
-    
-    /* for(i = 1; i <= 9; i++){
-        if (userValues[i -1] !== i){
-            possibleValues.forEach(x => {
-                possibleValues. possibleValues.findIndex(x)
-            });
-        }
-    } */
-    //console.log(userValues);
-    //have to figure out how to adjust this so that order doesn't matter
-
 
     if(possibleValues.length === 1){
-        confirmedValues = possibleValues;
+        confirmedValues.push(possibleValues);
     }
-
-    
+    console.log(possibleValues);
+    //console.log(userValues);
+    //console.log(confirmedValues);
 });
 
 
