@@ -28,13 +28,32 @@ document.querySelector('.submit').addEventListener('click', function(){
     let userValues = [];
     let possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let confirmedValues = [];
-
+    
     for (i = 0; i <= 8; i++){
         if(board[0][i] > 0){
             userValues.push(board[0][i]);
+        } else {
+            userValues.push(0);
         }
     }
+
+    let rows = [];
+    let columns = [];
     
+    for (i = 0; i <= 8; i++){
+        for(x = 0; x <= 8; x++){
+            rows.push(board[0][i]);
+            columns.push(board[x][0]);
+        }
+    }
+
+    console.log(rows);
+    console.log(columns);
+
+    //fix this
+    
+    
+
     userValues.forEach(i => {
         possibleValues.splice(possibleValues.findIndex(x => x == i), 1);
     });
@@ -43,23 +62,11 @@ document.querySelector('.submit').addEventListener('click', function(){
     if(possibleValues.length === 1){
         confirmedValues.push(possibleValues);
     }
-    console.log(possibleValues);
+    //console.log(possibleValues);
     //console.log(userValues);
     //console.log(confirmedValues);
 });
 
-
-//test each square from 1-9 against each row
-
-
-
-//test each square from 1-9 against each column
-
-
-
-
-
-//test each square from 1-9 against each large square
 
 
 //replace each empty value with a valid value
