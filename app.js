@@ -46,15 +46,22 @@ document.querySelector('.submit').addEventListener('click', function(){
 
     
     for (let i = 0; i <= possibleValues.length - 1; i++) {
-        console.log(possibleValues[i])
+        //console.log(possibleValues[i])
     }
     
+    
     for (i = 0; i <= 8; i++){
-        for (x = 0; x <= 8; i++){
-            userValues.forEach(y => {
-                possibleValues.splice(possibleValues[i].findIndex(z => z == y), 1);
-            });
-        }
+        userValues[i].forEach(x => {
+            //possibleValues.splice(possibleValues[i].findIndex(z => z == x), 1);
+            /*if(possibleValues[i].findIndex(a => a == x) !== -1){
+                possibleValues.splice(possibleValues[i].findIndex(a => a == x), 1);
+            } else {
+
+            }*/
+            //console.log(possibleValues);
+            
+            console.log(possibleValues.filter(possibleValues[i][possibleValues[i].findIndex(a => a == x)]));
+        });
     }
 
     //fix this
