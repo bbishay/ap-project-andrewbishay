@@ -27,7 +27,17 @@ document.querySelector('.submit').addEventListener('click', function(){
 
     let userValues = [];
     let confirmedValues = [];
-    let possibleValues = [[1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 2, 3, 4, 5, 6, 7, 8, 9]];
+    let possibleValues = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ];
     
 
     for(i = 0; i <= 8; i++){
@@ -48,21 +58,27 @@ document.querySelector('.submit').addEventListener('click', function(){
     for (let i = 0; i <= possibleValues.length - 1; i++) {
         //console.log(possibleValues[i])
     }
-    
-    
+
+    //possibleValues[0].splice(possibleValues[0].findIndex(x => x == 8), 1);
+    //console.log(possibleValues[0]);
+
     for (i = 0; i <= 8; i++){
         userValues[i].forEach(x => {
-            //possibleValues.splice(possibleValues[i].findIndex(z => z == x), 1);
-            /*if(possibleValues[i].findIndex(a => a == x) !== -1){
-                possibleValues.splice(possibleValues[i].findIndex(a => a == x), 1);
-            } else {
-
-            }*/
-            //console.log(possibleValues);
-            
-            console.log(possibleValues.filter(possibleValues[i][possibleValues[i].findIndex(a => a == x)]));
+            if(x !== 0){
+                possibleValues[x].splice(possibleValues[i].findIndex(a => a == x), 1);
+                console.log(possibleValues[x]);
+            } else{
+                
+            } 
         });
+        //weird result -- when every row has a value, console returns error message
     }
+    /* for(i = 0; i <= 8; i++){
+        console.log(userValues[i][0]);
+    } */
+    
+    
+    
 
     //fix this
 
