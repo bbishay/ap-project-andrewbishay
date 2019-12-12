@@ -39,7 +39,6 @@ document.querySelector('.submit').addEventListener('click', function(){
         [1, 2, 3, 4, 5, 6, 7, 8, 9]
     ];
     
-
     for(i = 0; i <= 8; i++){
         let userRow = []
         for (x = 9 * i, y = 0; x <= 8 + 9 * i, y <= 8; x++, y++){
@@ -52,53 +51,28 @@ document.querySelector('.submit').addEventListener('click', function(){
         userValues.push(userRow);
     }
     
-    
-
-    
     for (let i = 0; i <= possibleValues.length - 1; i++) {
         //console.log(possibleValues[i])
     }
-
-    //possibleValues[0].splice(possibleValues[0].findIndex(x => x == 8), 1);
-    //console.log(possibleValues[0]);
 
     for (i = 0; i <= 8; i++){
         userValues[i].forEach(x => {
             if(x !== 0){
                 possibleValues[x].splice(possibleValues[i].findIndex(a => a == x), 1);
-                console.log(possibleValues[x]);
-            } else{
-                
+                //the problem is with possibleValues[x]
             }
         });
-        //weird result -- when every row has a value, console returns error message
+        //weird results -- sometimes works, sometimes doesn't, when every row has a value, console returns error message
     }
+    console.log(possibleValues);
     /* for(i = 0; i <= 8; i++){
         console.log(userValues[i][0]);
     } */
-    
-    //console.log(userValues);
-    
-    
-
-    //fix this
-
-
-    userValues.forEach(i => {
-        possibleValues.splice(possibleValues.findIndex(x => x == i), 1);
-    });
-    
 
     if(possibleValues.length === 1){
         confirmedValues.push(possibleValues);
     }
-    //console.log(possibleValues);
-    //console.log(userValues);
-    //console.log(confirmedValues);
 });
 
-
-
 //replace each empty value with a valid value
-
 //display
