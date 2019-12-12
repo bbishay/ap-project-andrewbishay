@@ -69,7 +69,7 @@ document.querySelector('.submit').addEventListener('click', function(){
                 console.log(possibleValues[x]);
             } else{
                 
-            } 
+            }
         });
         //weird result -- when every row has a value, console returns error message
     }
@@ -77,6 +77,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         console.log(userValues[i][0]);
     } */
     
+    //console.log(userValues);
     
     
 
