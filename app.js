@@ -58,20 +58,20 @@ document.querySelector('.submit').addEventListener('click', function(){
     for (i = 0; i <= 8; i++){
         userValues[i].forEach(x => {
             if(x !== 0){
-                possibleValues[x].splice(possibleValues[i].findIndex(a => a == x), 1);
-                //the problem is with possibleValues[x]
+                possibleValues[i].splice(possibleValues[i].findIndex(a => a == x), 1);
             }
         });
         //weird results -- sometimes works, sometimes doesn't, when every row has a value, console returns error message
     }
-    console.log(possibleValues);
-    /* for(i = 0; i <= 8; i++){
-        console.log(userValues[i][0]);
-    } */
 
-    if(possibleValues.length === 1){
-        confirmedValues.push(possibleValues);
+    for (i = 0; i <= 8; i++){
+        if(possibleValues[i].length === 1){
+            confirmedValues.push(possibleValues[i]);
+        } else{
+            confirmedValues.push(0);
+        }
     }
+    //rework when columns are figured out
 });
 
 //replace each empty value with a valid value
