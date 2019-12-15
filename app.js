@@ -120,37 +120,19 @@ document.querySelector('.submit').addEventListener('click', function(){
         });
     }
 
-    function intersect(){
-        let intersection = [];
-        let lists;
-
-        if (possibleValueRows.length === 1){
-            lists = possibleValueRows[0];
-        } else {
-            lists = possibleValueRows;
-        }
-        for (i = 0; i < lists.length; i++){
-            let currentList = lists[i];
-            for (j = 0; j < currentList.length; j++){
-                let currentValue = currentList[j];
-                if (intersection.indexOf(currentValue) === -1){
-                    let existsInAll = true;
-                    for (k = 0; k < lists.length; k++){
-                        if(lists[k].indexOf(currentValue) === -1){
-                            existsInAll = false;
-                            break;
-                        }
-                    }
-                    if(existsInAll){
-                        intersection.push(currentValue)
-                    }
-                }
-            }
+    function intersect(arr1, arr2){
+        let intersection = [...arr1, ...arr2];
+        let value;
+        if (arr1.includes(value) && arr2.includes(value)){
+            intersection.push(value)
         }
         return intersection;
     }
 
-    //found on the internet, sorta works
+    let asdf = [1, 2, 3, 4];
+    let sdfg = [2, 3, 4, 5];
+    let dfgh = [3, 4, 5, 6];
+    
 
     for (i = 0; i <= 8; i++){
         for (j = 0; j <= 8; j++){
@@ -162,7 +144,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         }   
     }
     
-    console.log(allPossibleValues);
+    //console.log(allPossibleValues);
     
     for (i = 0; i <= 8; i++){
         if(possibleValueRows[i].length === 1){
