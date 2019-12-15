@@ -120,28 +120,49 @@ document.querySelector('.submit').addEventListener('click', function(){
         });
     }
 
+    function intersect(){
+        let intersection = [];
+        let lists;
+
+        if (possibleValueRows.length === 1){
+            lists = possibleValueRows[0];
+        } else {
+            lists = possibleValueRows;
+        }
+        for (i = 0; i < lists.length; i++){
+            let currentList = lists[i];
+            for (j = 0; j < currentList.length; j++){
+                let currentValue = currentList[j];
+                if (intersection.indexOf(currentValue) === -1){
+                    let existsInAll = true;
+                    for (k = 0; k < lists.length; k++){
+                        if(lists[k].indexOf(currentValue) === -1){
+                            existsInAll = false;
+                            break;
+                        }
+                    }
+                    if(existsInAll){
+                        intersection.push(currentValue)
+                    }
+                }
+            }
+        }
+        return intersection;
+    }
+
+    //found on the internet, sorta works
+
     for (i = 0; i <= 8; i++){
         for (j = 0; j <= 8; j++){
             if (board[i][j] === 0){
-                allPossibleValues.push(possibleValueRows[i].filter(value => possibleValueColumns[j].includes(value)));
+                allPossibleValues.push(intersect(possibleValueRows[i], possibleValueSquares[i], possibleValueColumns[j]));
             } else {
                 allPossibleValues.push([]);
             }
         }   
     }
-
-    for (i = 0; i <= 6; i = i + 3){
-        for (j = 0; j <= 6; j = j + 3){
-            for (k = 0; k <= 2; k++){
-                for (l = 0; l <= 2; l++){
-                    console.log(board[i + k][j + l])
-                }
-            }
-        }
-    }
     
-    //console.log(allPossibleValues);
-    
+    console.log(allPossibleValues);
     
     for (i = 0; i <= 8; i++){
         if(possibleValueRows[i].length === 1){
