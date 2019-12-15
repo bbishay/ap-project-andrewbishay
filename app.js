@@ -25,9 +25,32 @@ document.querySelector('.submit').addEventListener('click', function(){
         board.push(row);
     }
 
-    let userValues = [];
+    let userValueRows = [];
+    let userValueColumns = [];
     let confirmedValues = [];
-    let possibleValues = [
+    let possibleValueRows = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ];
+    let possibleValueColumns = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ];
+    let possibleValuesGeneral = [
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
@@ -39,7 +62,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         [1, 2, 3, 4, 5, 6, 7, 8, 9]
     ];
     
-    for(i = 0; i <= 8; i++){
+    for (i = 0; i <= 8; i++){
         let userRow = []
         for (x = 9 * i, y = 0; x <= 8 + 9 * i, y <= 8; x++, y++){
             if(board[i][y] > 0){
@@ -48,30 +71,62 @@ document.querySelector('.submit').addEventListener('click', function(){
                 userRow.push(0);
             }
         }
-        userValues.push(userRow);
-    }
-    
-    for (let i = 0; i <= possibleValues.length - 1; i++) {
-        //console.log(possibleValues[i])
+        userValueRows.push(userRow);
     }
 
     for (i = 0; i <= 8; i++){
-        userValues[i].forEach(x => {
+        let userColumn = [];
+        for (j = 0; j <= 8; j++){
+            userColumn.push(userValueRows[j][i]);
+        }
+        userValueColumns.push(userColumn);
+    }
+
+    for (i = 0; i <= 8; i++){
+        userValueRows[i].forEach(x => {
             if(x !== 0){
-                possibleValues[i].splice(possibleValues[i].findIndex(a => a == x), 1);
+                possibleValueRows[i].splice(possibleValueRows[i].findIndex(a => a == x), 1);
             }
         });
-        //weird results -- sometimes works, sometimes doesn't, when every row has a value, console returns error message
     }
 
     for (i = 0; i <= 8; i++){
-        if(possibleValues[i].length === 1){
-            confirmedValues.push(possibleValues[i]);
+        userValueColumns[i].forEach(x => {
+            if(x !== 0){
+                possibleValueColumns[i].splice(possibleValueColumns[i].findIndex(a => a == x), 1);
+            }
+        });
+    }
+    
+    let individualArray = []
+    let possibleValueSquares = [];
+
+    for(i = 0; i <= 8; i++){
+        for(j = 0; j <= 8; j++){
+            let square = possibleValuesGeneral.splice();
+            individualArray.push(square);
+        }   
+    }
+    
+    //finish this -- maybe make possibleValuesGeneral only be an array of the values from 1-9 once; then splice all values found in possibleValueRows and possibleValueColumns, then check to see if the length of the array = 1 and replace it with the value if true
+
+    individualArray.forEach(x => {
+        if(x === 0){
+
+        }
+    });
+
+    //console.log(possibleValueSquares);
+    
+    
+    for (i = 0; i <= 8; i++){
+        if(possibleValueRows[i].length === 1){
+            confirmedValues.push(possibleValueRows[i])
         } else{
             confirmedValues.push(0);
         }
     }
-    //rework when columns are figured out
+    //rework when columns and big squares are figured out
 });
 
 //replace each empty value with a valid value
