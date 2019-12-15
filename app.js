@@ -27,7 +27,7 @@ document.querySelector('.submit').addEventListener('click', function(){
 
     let userValueRows = [];
     let userValueColumns = [];
-    let confirmedValues = [];
+    let userValueSquares = [];
     let possibleValueRows = [
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
@@ -50,7 +50,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
         [1, 2, 3, 4, 5, 6, 7, 8, 9]
     ];
-    let possibleValuesGeneral = [
+    let possibleValueSquares = [
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
@@ -61,6 +61,8 @@ document.querySelector('.submit').addEventListener('click', function(){
         [1, 2, 3, 4, 5, 6, 7, 8, 9], 
         [1, 2, 3, 4, 5, 6, 7, 8, 9]
     ];
+    let allPossibleValues = [];
+    let confirmedValues = [];
     
     for (i = 0; i <= 8; i++){
         let userRow = []
@@ -82,6 +84,8 @@ document.querySelector('.submit').addEventListener('click', function(){
         userValueColumns.push(userColumn);
     }
 
+    //figure out how to make 2D array of big square values
+
     for (i = 0; i <= 8; i++){
         userValueRows[i].forEach(x => {
             if(x !== 0){
@@ -98,23 +102,17 @@ document.querySelector('.submit').addEventListener('click', function(){
         });
     }
     
-    let individualArray = []
-    let possibleValueSquares = [];
-
-    for(i = 0; i <= 8; i++){
-        for(j = 0; j <= 8; j++){
-            let square = possibleValuesGeneral.splice();
-            individualArray.push(square);
+    for (i = 0; i <= 8; i++){
+        for (j = 0; j <= 8; j++){
+            if (board[i][j] === 0){
+                allPossibleValues.push(possibleValueRows[i].filter(value => possibleValueColumns[j].includes(value)));
+            } else {
+                allPossibleValues.push([]);
+            }
         }   
     }
     
-    //finish this -- maybe make possibleValuesGeneral only be an array of the values from 1-9 once; then splice all values found in possibleValueRows and possibleValueColumns, then check to see if the length of the array = 1 and replace it with the value if true
-
-    individualArray.forEach(x => {
-        if(x === 0){
-
-        }
-    });
+    //this works very nicely, but adjust for the big squares too
 
     //console.log(possibleValueSquares);
     
