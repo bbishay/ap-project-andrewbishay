@@ -84,7 +84,17 @@ document.querySelector('.submit').addEventListener('click', function(){
         userValueColumns.push(userColumn);
     }
 
-    //figure out how to make 2D array of big square values
+    for (i = 0; i <= 6; i = i + 3){
+        for (j = 0; j <= 6; j = j + 3){
+            let square = [];
+            for (k = 0; k <= 2; k++){
+                for (l = 0; l <= 2; l++){
+                    square.push(board[k + i][l + j]); 
+                }
+            }
+            userValueSquares.push(square);
+        }
+    }
 
     for (i = 0; i <= 8; i++){
         userValueRows[i].forEach(x => {
@@ -101,7 +111,15 @@ document.querySelector('.submit').addEventListener('click', function(){
             }
         });
     }
-    
+
+    for (i = 0; i <= 8; i++){
+        userValueSquares[i].forEach(x => {
+            if(x !== 0){
+                possibleValueSquares[i].splice(possibleValueSquares[i].findIndex(a => a == x), 1);
+            }
+        });
+    }
+
     for (i = 0; i <= 8; i++){
         for (j = 0; j <= 8; j++){
             if (board[i][j] === 0){
@@ -111,10 +129,18 @@ document.querySelector('.submit').addEventListener('click', function(){
             }
         }   
     }
-    
-    //this works very nicely, but adjust for the big squares too
 
-    //console.log(possibleValueSquares);
+    for (i = 0; i <= 6; i = i + 3){
+        for (j = 0; j <= 6; j = j + 3){
+            for (k = 0; k <= 2; k++){
+                for (l = 0; l <= 2; l++){
+                    console.log(board[i + k][j + l])
+                }
+            }
+        }
+    }
+    
+    //console.log(allPossibleValues);
     
     
     for (i = 0; i <= 8; i++){
