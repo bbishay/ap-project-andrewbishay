@@ -6,9 +6,6 @@ function checkInput(input){
 };
 //restricts typeable characters in input to only numerical values
 
-
-
-//obtain input values and create 2D array of the board
 document.querySelector('.submit').addEventListener('click', function(){
     let values = [];
     let board = [];
@@ -63,6 +60,7 @@ document.querySelector('.submit').addEventListener('click', function(){
     ];
     let allPossibleValues = [];
     let confirmedValues = [];
+    let boardSolved = [];
     
     for (i = 0; i <= 8; i++){
         let userRow = []
@@ -123,15 +121,23 @@ document.querySelector('.submit').addEventListener('click', function(){
     for (i = 0; i <= 8; i++){
         for (j = 0; j <= 8; j++){
             if (board[i][j] === 0){
-                allPossibleValues.push(possibleValueRows[i].filter(value => possibleValueColumns[j].includes(value)));
+                allPossibleValues.push(intersect(possibleValueRows[i], possibleValueColumns[j], possibleValueSquares[Math.floor(j / 3) + 3 * Math.floor(i / 3)]));
             } else {
                 allPossibleValues.push([]);
             }
         }   
     }
-    
-    console.log(allPossibleValues);
-    
+
+    function intersect(arr1, arr2, arr3){
+        let intersection = [];
+        arr1.forEach(value => {
+            if (arr1.includes(value) && arr2.includes(value) && arr3.includes(value)){
+                intersection.push(value);
+            }
+        });
+        return intersection;
+    }
+
     for (i = 0; i <= 8; i++){
         if(possibleValueRows[i].length === 1){
             confirmedValues.push(possibleValueRows[i])
@@ -140,7 +146,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         }
     }
     //rework when columns and big squares are figured out
+    
+    //replace each empty value with a valid value
 });
-
-//replace each empty value with a valid value
 //display
