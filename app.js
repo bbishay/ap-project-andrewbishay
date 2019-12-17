@@ -145,6 +145,9 @@ document.querySelector('.submit').addEventListener('click', function(){
             confirmedValues.push(0);
         }
     }
+
+    console.log(allPossibleValues);
+    
     //rework when columns and big squares are figured out
     
     //replace each empty value with a valid value
