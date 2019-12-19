@@ -16,8 +16,8 @@ document.querySelector('.submit').addEventListener('click', function(){
 
     for (i = 0; i <= 8; i++) {
         let row = [];
-        for (x = 9 * i; x <= 8 + 9 * i; x++) {
-            row.push(values[x]);
+        for (j = 9 * i; j <= 8 + 9 * i; j++) {
+            row.push(values[j]);
         }
         board.push(row);
     }
@@ -118,16 +118,6 @@ document.querySelector('.submit').addEventListener('click', function(){
         });
     }
 
-    for (i = 0; i <= 8; i++){
-        for (j = 0; j <= 8; j++){
-            if (board[i][j] === 0){
-                allPossibleValues.push(intersect(possibleValueRows[i], possibleValueColumns[j], possibleValueSquares[Math.floor(j / 3) + 3 * Math.floor(i / 3)]));
-            } else {
-                allPossibleValues.push([]);
-            }
-        }   
-    }
-
     function intersect(arr1, arr2, arr3){
         let intersection = [];
         arr1.forEach(value => {
@@ -139,14 +129,37 @@ document.querySelector('.submit').addEventListener('click', function(){
     }
 
     for (i = 0; i <= 8; i++){
-        if(possibleValueRows[i].length === 1){
-            confirmedValues.push(possibleValueRows[i])
-        } else{
+        for (j = 0; j <= 8; j++){
+            if (board[i][j] === 0){
+                allPossibleValues.push(intersect(possibleValueRows[i], possibleValueColumns[j], possibleValueSquares[Math.floor(j / 3) + 3 * Math.floor(i / 3)]));
+            } else {
+                allPossibleValues.push([]);
+            }
+        }   
+    }
+
+    for (i = 0; i <= 80; i++){
+        if(allPossibleValues[i].length === 1){
+            confirmedValues.push(allPossibleValues[i][0])
+        } else if(allPossibleValues[i].length === 0){
+            confirmedValues.push(values[i]);
+        } else {
             confirmedValues.push(0);
         }
     }
 
-    console.log(allPossibleValues);
+    for (i = 0; i <= 8; i++){
+        let rowSolved = [];
+        for (j = 9 * i; j <= 8 + 9 * i; j++){
+            rowSolved.push(confirmedValues[j]);
+        }        
+        boardSolved.push(rowSolved);
+    }
+    
+    console.log(boardSolved);
+    
+
+    //console.log(boardSolved);
     
     //rework when columns and big squares are figured out
     
