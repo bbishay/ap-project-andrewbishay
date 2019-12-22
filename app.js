@@ -21,7 +21,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         }
         board.push(row);
     }
-
+    
     let userValueRows = [];
     let userValueColumns = [];
     let userValueSquares = [];
@@ -155,11 +155,21 @@ document.querySelector('.submit').addEventListener('click', function(){
         }        
         boardSolved.push(rowSolved);
     }
-    
-    console.log(boardSolved);
-    
 
-    //console.log(boardSolved);
+    let emptySpaces = [];
+    for (i = 0; i <= 8; i++){
+        for (j = 0; j <= 8; j++){
+            if (boardSolved[i][j] === 0){
+                emptySpaces.push(boardSolved[i][j]);
+            }
+        }
+    }
+    
+    
+    while(emptySpaces.length > 0){
+        console.log('hi');
+        emptySpaces.pop();
+    }
     
     //rework when columns and big squares are figured out
     
