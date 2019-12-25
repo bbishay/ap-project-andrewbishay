@@ -63,6 +63,15 @@ document.querySelector('.submit').addEventListener('click', function(){
     let boardSolved = [];
     let emptySpaces = [];
 
+    function intersect(arr1, arr2, arr3){
+        let intersection = [];
+        arr1.forEach(value => {
+            if (arr1.includes(value) && arr2.includes(value) && arr3.includes(value)){
+                intersection.push(value);
+            }
+        });
+        return intersection;
+    }
     
     while(emptySpaces.length > 0){
         for (i = 0; i <= 8; i++){
@@ -121,16 +130,6 @@ document.querySelector('.submit').addEventListener('click', function(){
             });
         }
     
-        function intersect(arr1, arr2, arr3){
-            let intersection = [];
-            arr1.forEach(value => {
-                if (arr1.includes(value) && arr2.includes(value) && arr3.includes(value)){
-                    intersection.push(value);
-                }
-            });
-            return intersection;
-        }
-    
         for (i = 0; i <= 8; i++){
             for (j = 0; j <= 8; j++){
                 if (board[i][j] === 0){
@@ -166,9 +165,9 @@ document.querySelector('.submit').addEventListener('click', function(){
                 }
             }
         }
-        board = boardSolved;    
+        board = boardSolved;
     }
-    console.log(boardSolved);
+    console.log(board);
 });
 
 
