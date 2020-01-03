@@ -61,7 +61,7 @@ document.querySelector('.submit').addEventListener('click', function(){
     let allPossibleValues = [];
     let confirmedValues = [];
     let boardSolved = [];
-    let emptySpaces = [];
+    let emptySpaces = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     function intersect(arr1, arr2, arr3){
         let intersection = [];
@@ -73,101 +73,114 @@ document.querySelector('.submit').addEventListener('click', function(){
         return intersection;
     }
     
-    while(emptySpaces.length > 0){
+    
+    for (i = 0; i <= 8; i++){
+        let userRow = []
+        for (x = 9 * i, y = 0; x <= 8 + 9 * i, y <= 8; x++, y++){
+            if(board[i][y] > 0){
+                userRow.push(board[i][y]);
+            } else {
+                userRow.push(0);
+            }
+        }
+        userValueRows.push(userRow);
+    }
+    
+    for (i = 0; i <= 8; i++){
+        let userColumn = [];
+        for (j = 0; j <= 8; j++){
+            userColumn.push(userValueRows[j][i]);
+        }
+        userValueColumns.push(userColumn);
+    }
+    
+    for (i = 0; i <= 6; i = i + 3){
+        for (j = 0; j <= 6; j = j + 3){
+            let square = [];
+            for (k = 0; k <= 2; k++){
+                for (l = 0; l <= 2; l++){
+                    square.push(board[k + i][l + j]); 
+                }
+            }
+            userValueSquares.push(square);
+        }
+    }
+        
+    for (i = 0; i <= 8; i++){
+        userValueRows[i].forEach(x => {
+            if(x !== 0){
+                possibleValueRows[i].splice(possibleValueRows[i].findIndex(a => a == x), 1);
+            }
+        });
+    }
+    
+    for (i = 0; i <= 8; i++){
+        userValueColumns[i].forEach(x => {
+            if(x !== 0){
+                possibleValueColumns[i].splice(possibleValueColumns[i].findIndex(a => a == x), 1);
+            }
+        });
+    }
+    
+    for (i = 0; i <= 8; i++){
+        userValueSquares[i].forEach(x => {
+            if(x !== 0){
+                possibleValueSquares[i].splice(possibleValueSquares[i].findIndex(a => a == x), 1);
+            }
+        });
+    }
+    
+    for (i = 0; i <= 8; i++){
+        for (j = 0; j <= 8; j++){
+            if (board[i][j] === 0){
+                allPossibleValues.push(intersect(possibleValueRows[i], possibleValueColumns[j], possibleValueSquares[Math.floor(j / 3) + 3 * Math.floor(i / 3)]));
+            } else {
+                allPossibleValues.push([]);
+            }
+        }   
+    }
+    
+    for (i = 0; i <= 80; i++){
+        if(allPossibleValues[i].length === 1){
+            confirmedValues.push(allPossibleValues[i][0])
+        } else if(allPossibleValues[i].length === 0){
+            confirmedValues.push(values[i]);
+        } else {
+            confirmedValues.push(0);
+        }
+    }
+    
+    for (i = 0; i <= 8; i++){
+        let rowSolved = [];
+        for (j = 9 * i; j <= 8 + 9 * i; j++){
+            rowSolved.push(confirmedValues[j]);
+        }        
+        boardSolved.push(rowSolved);
+    }
+
+    /* while (emptySpaces.length > 0){
         for (i = 0; i <= 8; i++){
             let userRow = []
             for (x = 9 * i, y = 0; x <= 8 + 9 * i, y <= 8; x++, y++){
-                if(board[i][y] > 0){
-                    userRow.push(board[i][y]);
+                if(boardSolved[i][y] > 0){
+                    userRow.push(boardSolved[i][y]);
                 } else {
                     userRow.push(0);
                 }
             }
             userValueRows.push(userRow);
         }
-    
-        for (i = 0; i <= 8; i++){
-            let userColumn = [];
-            for (j = 0; j <= 8; j++){
-                userColumn.push(userValueRows[j][i]);
-            }
-            userValueColumns.push(userColumn);
-        }
-    
-        for (i = 0; i <= 6; i = i + 3){
-            for (j = 0; j <= 6; j = j + 3){
-                let square = [];
-                for (k = 0; k <= 2; k++){
-                    for (l = 0; l <= 2; l++){
-                        square.push(board[k + i][l + j]); 
-                    }
-                }
-                userValueSquares.push(square);
-            }
-        }
-    
-        for (i = 0; i <= 8; i++){
-            userValueRows[i].forEach(x => {
-                if(x !== 0){
-                    possibleValueRows[i].splice(possibleValueRows[i].findIndex(a => a == x), 1);
-                }
-            });
-        }
-    
-        for (i = 0; i <= 8; i++){
-            userValueColumns[i].forEach(x => {
-                if(x !== 0){
-                    possibleValueColumns[i].splice(possibleValueColumns[i].findIndex(a => a == x), 1);
-                }
-            });
-        }
-    
-        for (i = 0; i <= 8; i++){
-            userValueSquares[i].forEach(x => {
-                if(x !== 0){
-                    possibleValueSquares[i].splice(possibleValueSquares[i].findIndex(a => a == x), 1);
-                }
-            });
-        }
-    
         for (i = 0; i <= 8; i++){
             for (j = 0; j <= 8; j++){
-                if (board[i][j] === 0){
-                    allPossibleValues.push(intersect(possibleValueRows[i], possibleValueColumns[j], possibleValueSquares[Math.floor(j / 3) + 3 * Math.floor(i / 3)]));
-                } else {
-                    allPossibleValues.push([]);
+                if (boardSolved[i][j] !== 0){
+                    emptySpaces.pop();
                 }
-            }   
-        }
-    
-        for (i = 0; i <= 80; i++){
-            if(allPossibleValues[i].length === 1){
-                confirmedValues.push(allPossibleValues[i][0])
-            } else if(allPossibleValues[i].length === 0){
-                confirmedValues.push(values[i]);
-            } else {
-                confirmedValues.push(0);
             }
         }
-    
-        for (i = 0; i <= 8; i++){
-            let rowSolved = [];
-            for (j = 9 * i; j <= 8 + 9 * i; j++){
-                rowSolved.push(confirmedValues[j]);
-            }        
-            boardSolved.push(rowSolved);
-        }
+    } */
 
-        for (i = 0; i <= 8; i++){
-            for (j = 0; j <= 8; j++){
-                if (boardSolved[i][j] === 0){
-                    emptySpaces.push(boardSolved[i][j]);
-                }
-            }
-        }
-        board = boardSolved;
-    }
-    console.log(board);
+    console.log(emptySpaces);
+    console.log(boardSolved);
 });
 
 
