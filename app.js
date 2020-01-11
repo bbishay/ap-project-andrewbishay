@@ -158,29 +158,8 @@ document.querySelector('.submit').addEventListener('click', function(){
         boardSolved.push(rowSolved);
     }
 
-    /* while (emptySpaces.length > 0){
-        for (i = 0; i <= 8; i++){
-            let userRow = []
-            for (x = 9 * i, y = 0; x <= 8 + 9 * i, y <= 8; x++, y++){
-                if(boardSolved[i][y] > 0){
-                    userRow.push(boardSolved[i][y]);
-                } else {
-                    userRow.push(0);
-                }
-            }
-            userValueRows.push(userRow);
-        }
-        for (i = 0; i <= 8; i++){
-            for (j = 0; j <= 8; j++){
-                if (boardSolved[i][j] !== 0){
-                    emptySpaces.pop();
-                }
-            }
-        }
-    } */
-
-    console.log(emptySpaces);
-    console.log(boardSolved);
+    //console.log(emptySpaces);
+    console.log(...board);
 });
 
 
