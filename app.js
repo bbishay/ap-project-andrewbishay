@@ -76,9 +76,9 @@ document.querySelector('.submit').addEventListener('click', function(){
     
     for (i = 0; i <= 8; i++){
         let userRow = []
-        for (x = 9 * i, y = 0; x <= 8 + 9 * i, y <= 8; x++, y++){
-            if(board[i][y] > 0){
-                userRow.push(board[i][y]);
+        for (j = 0; j <= 8; j++){
+            if(board[i][j] > 0){
+                userRow.push(board[i][j]);
             } else {
                 userRow.push(0);
             }

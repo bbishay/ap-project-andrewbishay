@@ -4,7 +4,7 @@ function checkInput(input){
                     input.value = input.value.replace(invalidChars,'');
           }
 };
-//restricts typeable characters in input to only numerical values
+//restricts typeable characters in input to only numerical values between 1 and 9
 
 document.querySelector('.submit').addEventListener('click', function(){
     let emptySpaces = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -23,64 +23,63 @@ document.querySelector('.submit').addEventListener('click', function(){
         board.push(row);
     }
 
-    while (emptySpaces.length > 0){
-        let userValueRows = [];
-        let userValueColumns = [];
-        let userValueSquares = [];
-        let possibleValueRows = [
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        ];
-        let possibleValueColumns = [
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        ];
-        let possibleValueSquares = [
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9], 
-            [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        ];
+    let userValueRows = [];
+    let userValueColumns = [];
+    let userValueSquares = [];
+    let possibleValueRows = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ];
+    let possibleValueColumns = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ];
+    let possibleValueSquares = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9], 
+        [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ];
 
-        let allPossibleValues = [];
-        let confirmedValues = [];
-        let boardSolved = [];
-    
-        function intersect(arr1, arr2, arr3){
-            let intersection = [];
-            arr1.forEach(value => {
-                if (arr1.includes(value) && arr2.includes(value) && arr3.includes(value)){
-                    intersection.push(value);
-                }
-            });
-            return intersection;
-        }
-        
-        
+    let allPossibleValues = [];
+    let confirmedValues = [];
+    let boardSolved = [];
+
+    function intersect(arr1, arr2, arr3){
+        let intersection = [];
+        arr1.forEach(value => {
+            if (arr1.includes(value) && arr2.includes(value) && arr3.includes(value)){
+                intersection.push(value);
+            }
+        });
+        return intersection;
+    }
+
+    while (emptySpaces.length > 0){
         for (i = 0; i <= 8; i++){
             let userRow = []
-            for (x = 9 * i, y = 0; x <= 8 + 9 * i, y <= 8; x++, y++){
-                if(board[i][y] > 0){
-                    userRow.push(board[i][y]);
+            for (j = 0; j <= 8; j++){
+                if(board[i][j] > 0){
+                    userRow.push(board[i][j]);
                 } else {
                     userRow.push(0);
                 }
@@ -160,6 +159,12 @@ document.querySelector('.submit').addEventListener('click', function(){
             boardSolved.push(rowSolved);
         }
 
+        for(i = 0; i <= 8; i++){
+            for(j = 0; j <= 8; j++){
+                board[i].splice(0, 9, boardSolved[i][j]);
+            }
+        }
+
         for (i = 0; i <= 8; i++){
             for (j = 0; j <= 8; j++){
                 if(boardSolved[i][j] !== 0){
@@ -167,9 +172,8 @@ document.querySelector('.submit').addEventListener('click', function(){
                 }
             }
         }
-        board = boardSolved;
-        console.log(boardSolved);
     }
+    console.log(boardSolved);
     //console.log(emptySpaces);
 });
 
