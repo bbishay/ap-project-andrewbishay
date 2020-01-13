@@ -8,13 +8,15 @@ function checkInput(input){
 
 document.querySelector('.submit').addEventListener('click', function(){
     let emptySpaces = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let values = [];
+
+    let values = [6, 0, 0, 1, 0, 0, 0, 3, 2, 8, 0, 1, 0, 9, 6, 0, 0, 5, 0, 7, 5, 0, 8, 4, 0, 0, 0, 4, 3, 0, 0, 2, 0, 5, 6, 1, 5, 1, 8, 7, 0, 0, 4, 0, 9, 0, 9, 6, 4, 1, 0, 3, 0, 0, 0, 0, 0, 0, 7, 0, 0, 8, 0, 0, 6, 0, 0, 3, 1, 0, 5, 0, 7, 0, 2, 5, 4, 0, 6, 0, 3];
     let board = [];
 
-    for (i = 1; i < 82; i++){
+    /* for (i = 1; i < 82; i++){
         values.push(Number(document.querySelector(`.square-small${i}`).value));
     }
-    
+     */
+
     for (i = 0; i <= 8; i++) {
         let row = [];
         for (j = 9 * i; j <= 8 + 9 * i; j++) {
@@ -172,6 +174,7 @@ document.querySelector('.submit').addEventListener('click', function(){
                 }
             }
         }
+        board = boardSolved;
     }
     console.log(boardSolved);
     //console.log(emptySpaces);
