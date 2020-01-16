@@ -161,12 +161,6 @@ document.querySelector('.submit').addEventListener('click', function(){
             boardSolved.push(rowSolved);
         }
 
-        for(i = 0; i <= 8; i++){
-            for(j = 0; j <= 8; j++){
-                board[i].splice(0, 9, boardSolved[i][j]);
-            }
-        }
-
         for (i = 0; i <= 8; i++){
             for (j = 0; j <= 8; j++){
                 if(boardSolved[i][j] !== 0){
@@ -174,10 +168,17 @@ document.querySelector('.submit').addEventListener('click', function(){
                 }
             }
         }
-        board = boardSolved;
+
+        for(i = 0; i <= 8; i++){
+            for(j = 0; j <= 8; j++){
+                board[i].splice(0, 9);
+                board[i].push(boardSolved[i][j]);
+            }
+        }
     }
+    
     console.log(boardSolved);
-    //console.log(emptySpaces);
+    console.log(emptySpaces);
 });
 
 
