@@ -76,7 +76,7 @@ document.querySelector('.submit').addEventListener('click', function(){
         return intersection;
     }
 
-    while (emptySpaces.length > 0){
+    while (emptySpaces.length !== 0){
         for (i = 0; i <= 8; i++){
             let userRow = []
             for (j = 0; j <= 8; j++){
